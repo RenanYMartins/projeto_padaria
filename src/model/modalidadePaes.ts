@@ -1,14 +1,12 @@
 export class ModalidadePaes {
     id:number;
     name:string;
-    price:number;
     isVegan:boolean;
 
-    constructor(name:string, price:number, isVegan:boolean){
-        this.name = name;
-        this.price = price;
-        this.isVegan = isVegan;
+    constructor(name:string, isVegan:boolean){
         this.id = this.geraId();
+        this.name = name;
+        this.isVegan = isVegan;
     }
 
     private geraId():number{
