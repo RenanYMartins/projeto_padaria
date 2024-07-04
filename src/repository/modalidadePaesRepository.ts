@@ -2,17 +2,15 @@ import { ModalidadePaes } from "../model/modalidadePaes";
 import { globalData } from "../global/global";
 
 export class ModalidadesPaesRepository{
-    modalidadesList: ModalidadePaes[] = [];
-
     add(modalidade: ModalidadePaes){
        globalData.modalidadesList.push(modalidade);
     }
 
-    filterModalidades():ModalidadePaes[]{
+    getModalidades():ModalidadePaes[]{
         return globalData.modalidadesList;
     }
     
-    filterModalidadeById(id: number): ModalidadePaes | undefined {
+    getModalidadeById(id: number): ModalidadePaes | undefined {
         return globalData.modalidadesList.find(modalidade => modalidade.id === id);
     }
 

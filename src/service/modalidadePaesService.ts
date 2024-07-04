@@ -19,15 +19,15 @@ export class ModalidadePaesService {
     }
 
     getAllModalidades():ModalidadePaes[]{
-        return this.modalidadesPaesRepository.filterModalidades();
+        return this.modalidadesPaesRepository.getModalidades();
     }
 
-    filterModalidadeById(id:number): ModalidadePaes | undefined{
-        return this.modalidadesPaesRepository.filterModalidadeById(id);
+    getModalidadeById(id:number): ModalidadePaes | undefined{
+        return this.modalidadesPaesRepository.getModalidadeById(id);
     }
 
     updateModalidade(modalidade: ModalidadePaes) {
-        const searchedModalidade = this.filterModalidadeById(modalidade.id);
+        const searchedModalidade = this.getModalidadeById(modalidade.id);
 
         if(!searchedModalidade){
             throw new Error("Modalidade não encontrada");

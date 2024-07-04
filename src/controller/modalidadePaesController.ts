@@ -20,7 +20,7 @@ export function createModalidade(req: Request, res: Response) {
     }
 }
 
-export function filterModalidades(req: Request, res: Response) {
+export function getModalidades(req: Request, res: Response) {
     try {
         const modalidades = service.getAllModalidades();
         res.status(200).json(modalidades);
@@ -29,10 +29,10 @@ export function filterModalidades(req: Request, res: Response) {
     }
 }
 
-export function filterModalidadeById(req: Request, res: Response) {
+export function getModalidadeById(req: Request, res: Response) {
     try {
         const id = Number(req.params.id)
-        const modalidade = service.filterModalidadeById(id);
+        const modalidade = service.getModalidadeById(id);
         if (modalidade) {
             res.status(200).json({
                 mensagem: "Produto encontrado com sucesso",
