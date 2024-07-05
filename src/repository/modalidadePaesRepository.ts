@@ -21,7 +21,6 @@ export class ModalidadesPaesRepository{
             throw new Error("Modalidade não encontrada");
         }
 
-        // Atualiza os dados da modalidade na lista global
         globalData.modalidadesList[index] = modalidade;
     }
 
@@ -32,7 +31,6 @@ export class ModalidadesPaesRepository{
             throw new Error("Modalidade não encontrada");
         }
 
-        // Atualiza os dados da modalidade na lista global
         globalData.modalidadesList.splice(index, 1);
     }
 }

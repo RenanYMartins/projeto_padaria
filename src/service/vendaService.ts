@@ -1,5 +1,4 @@
 import { EstoquePaesRepository } from './../repository/estoquePaesRepository';
-import { EstoquePaes } from './../model/estoquePaes';
 import { VendaPaes } from './../model/vendaPaes';
 import { VendaPaesRepository } from '../repository/vendaPaesRepository';
 import { globalData } from '../global/global'; 
@@ -18,13 +17,12 @@ export class VendaPaesService {
             throw new Error("Informações incompletas");
         }
     
-        const newVenda = new VendaPaes(cpfClient, totalValue, itens); // Use itensComNome aqui
+        const newVenda = new VendaPaes(cpfClient, totalValue, itens); 
     
         this.vendaPaesRepository.add(newVenda);
     
         return newVenda;
     }
-    
 
     getAllVenda():VendaPaes[]{
         return this.vendaPaesRepository.getAllVenda();

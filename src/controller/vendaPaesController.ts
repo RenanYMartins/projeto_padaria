@@ -1,4 +1,3 @@
-import { EstoquePaes } from './../model/estoquePaes';
 import { Request, Response } from 'express';
 import { VendaPaesService } from '../service/vendaService';
 import { VendaPaes } from '../model/vendaPaes';
@@ -60,10 +59,10 @@ export function getVendaById(req: Request, res: Response) {
         const itensComNome = venda?.itens.map(item => {
             const estoque = estoquePaesRepository.getEstoqueById(item.estoquePaesID);
             const modalidade = modalidadePaesRepository.getModalidadeById(estoque?.modalidadeID ?? 0);
-            console.log(modalidade?.name, item);
+            console.log(modalidade, item);
             return {
                 ...item,
-                nameItem: modalidade?.name || 'Nome do item não encontrado' // Defina um valor padrão caso o nome não seja encontrado
+                nameItem: modalidade?.name || 'Nome do item não encontrado'
             };
         });
 
