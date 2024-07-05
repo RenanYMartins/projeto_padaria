@@ -44,4 +44,10 @@ export class ModalidadePaesService {
     deleteModalidade(id:number) {
         return this.modalidadesPaesRepository.delete(id);
     }
+
+    getNameItem(id:number): string | undefined{
+        const nameItem = this.modalidadesPaesRepository.getModalidadeById(id); 
+        if(nameItem != null)
+            return nameItem.name;
+    }
 }

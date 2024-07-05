@@ -9,4 +9,8 @@ export class VendaPaesRepository{
     getAllVenda():VendaPaes[]{
         return globalData.vendaList;
     }
+
+    getVendaById(id: number): VendaPaes | undefined {
+        return globalData.vendaList.find(modalidade => modalidade.id === id);
+    }
 }

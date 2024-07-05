@@ -1,10 +1,11 @@
+import { ItemVenda } from './itemVenda';
 export class VendaPaes {
     id: number;
     cpfClient: string;
     totalValue: number;
-    itens: {idModalidade: number, quantity: number, value: number}[];
+    itens: ItemVenda[];
 
-    constructor(cpfClient: string, totalValue:number, itens:{idModalidade: number, quantity: number, value: number}[]){
+    constructor(cpfClient: string, totalValue:number, itens:ItemVenda[]){
         this.id = this.geraId();
         this.cpfClient = cpfClient;
         this.totalValue = totalValue;

@@ -15,7 +15,8 @@ import {
 } from './controller/estoquePaesController';
 import { 
     createVenda, 
-    getAllVenda
+    getAllVenda,
+    getVendaById
 } from './controller/vendaPaesController';
 
 const app = express();
@@ -35,6 +36,7 @@ app.put("/api/estoque/:id", updateEstoque);
 app.delete("/api/estoque/:id", deleteEstoque);
 app.post("/api/venda", createVenda);
 app.get("/api/venda", getAllVenda);
+app.get("/api/venda/:id", getVendaById);
 
 
 app.listen(PORT, () => {
